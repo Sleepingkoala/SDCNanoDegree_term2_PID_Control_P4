@@ -1,0 +1,48 @@
+#include "PID.h"
+#include <cmath>
+#include <iostream>
+
+using namespace std;
+
+/*
+* TODO: Complete the PID class.
+*/
+
+PID::PID() {}
+
+PID::~PID() {}
+
+void PID::Init(double Kp, double Ki, double Kd) {
+    ///* initialize the PID errors and coeffients
+    p_error = i_error = d_error = previous_cte = 0.0;
+    PID::Kp = Kp;
+    PID::Ki = Ki;
+    PID::Kd = Kd;  
+    
+    max_steering_angle = 1.0;
+
+}
+
+void PID::UpdateError(double cte) {
+
+    if(step == 1){p_error = cte;} // initialize the proportion error with crosstrack error
+    
+    p_error = cte;
+    i_error += cte;
+    d_error = cte - previous_cte;
+  
+    
+    previous_cte = cte;  
+    
+}
+
+double PID::TotalError() {
+
+    double steering_angle = -Kp*p_error-Kd*d_error-Ki*i_error;
+    
+    while(steering_angle > max_steering_angle)  steering_angle = max_steering_angle;
+    while(steering_angle < - max_steering_angle)  steering_angle = - max_steering_angle;
+
+    return steering_angle;
+}
+
