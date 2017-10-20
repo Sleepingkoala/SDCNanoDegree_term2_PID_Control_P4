@@ -1,4 +1,4 @@
-# PID-Control-Project
+﻿# PID-Control-Project
 
 This is my 4th project of Udacity SDCNanodegree program term 2, which aims to utilize a PID controller and to tune the hyperparameters in C++ to maneuver the vehicle around the lake race track. The simulator will provide the crosstrack error(CTE)and speed(mph) to compute the appropriate steering angle. The PID controller must drive the vehicle smoothly with steering and throttle commands around the simulator track.
 
@@ -56,7 +56,7 @@ trial3|(0.13,0.0, 0.0)  |./demos/trial3.mp4 | vehicle drives very smoothly in st
 trial4|(0.13,0.0, 1.0)  |./demos/trial4.mp4| add Kd = 1.0 and vehicle finishes the whole track very smoothly
 trial5|(0.13,0.0, 3.0)  |./demos/trial5.mp4| increase Ki and vehicle finishes the whole track while with more bumps and oscillations during the 2nd and 3rd turn.
 trial6|(0.13,0.0001,1.0)|**FinalChoice**|add Ki and vehicle finishes the whole track very smoothly with almost cte=0.  
-trial7|(0.13,0.0002,3.0)|./demos/trial7.mp4| increase Ki and vehicle finishes the whole track but larger bumps during turns.
+trial7|(0.13,0.0002,1.0)|./demos/trial7.mp4| increase Ki and vehicle finishes the whole track but larger bumps during turns.
 
 **Therefore, my final choice about PID gains(Kp,Ki,Kd) = trial 6(0.13, 0.0001,1.0). Please refer to ./demos to see the FinalChoice.mp4.** Besides, I have recorded trail1-trail7.mp4 perfectly to prove my tuning process, but the videos are too large(~2GB)and I have tried half a week to upload them online because of github attachment constraints. Now please see them.
 
